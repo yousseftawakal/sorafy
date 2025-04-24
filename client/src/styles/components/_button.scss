@@ -1,0 +1,51 @@
+.btn {
+  @include flex(row, center, center);
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius-sm;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+
+  &--1 {
+    background: $accent-gradient;
+    color: white;
+    border: none;
+    box-shadow: 0 0 20px rgba($primary-color, 0.2);
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 30px rgba($primary-color, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &__icon {
+      @include flex(row, center, center);
+    }
+  }
+
+  &--2 {
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+    border: 1px solid rgba($primary-color, 0.2);
+
+    &:hover {
+      background-color: rgba($primary-color, 0.15);
+      border-color: rgba($primary-color, 0.3);
+    }
+
+    &__icon {
+      @include flex(row, center, center);
+    }
+  }
+
+  &--small {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
