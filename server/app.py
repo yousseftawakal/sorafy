@@ -64,6 +64,13 @@ def get_available_effects():
             {'id': 'factor', 'name': 'Brightness Factor', 'type': 'slider', 'min': 0, 'max': 2, 'step': 0.1, 'default': 1.0}
         ]
     },
+       'hue_rotation': {
+        'name': 'Hue Rotation',
+        'description': 'Rotate the hues of the image',
+        'params': [
+            {'id': 'angle', 'name': 'Angle', 'type': 'slider', 'min': -180, 'max': 180, 'step': 1, 'default': 0}
+        ]
+    },
     }
     
     available_effects = {k: v for k, v in effect_info.items() if k in EFFECTS}
