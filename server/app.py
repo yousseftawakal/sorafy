@@ -57,6 +57,13 @@ def get_available_effects():
                 {'id': 'block_size', 'name': 'Block Size', 'type': 'slider', 'min': 0, 'max': 50, 'step': 1, 'default': 1}
             ]
         },
+        'brightness': {
+        'name': 'Brightness',
+        'description': 'Adjust the brightness of the image',
+        'params': [
+            {'id': 'factor', 'name': 'Brightness Factor', 'type': 'slider', 'min': 0, 'max': 2, 'step': 0.1, 'default': 1.0}
+        ]
+    },
     }
     
     available_effects = {k: v for k, v in effect_info.items() if k in EFFECTS}
