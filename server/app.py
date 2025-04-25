@@ -57,12 +57,14 @@ def get_available_effects():
                 {'id': 'block_size', 'name': 'Block Size', 'type': 'slider', 'min': 0, 'max': 50, 'step': 1, 'default': 1}
             ]
         },
-       
-       "grayscale": {
-           "description": "Convert image to grayscale",
-           "name": "Grayscale",
-           "params": []
+       'saturation': {
+            'name': 'Saturation',
+            'description': 'Apply saturation effect',
+            'params': [
+                {'id': 'level', 'name': 'Saturation Level', 'type': 'slider', 'min': 0, 'max': 2, 'step': 0.1, 'default': 1}
+            ]
         }
+      
 
     }
     

@@ -1,11 +1,11 @@
 from .blur import apply_blur
 from .salt_pepper import apply_salt_and_pepper
-from .grayscale import apply_grayscale
+from .saturation import apply_saturation
 
 EFFECTS = {
     'blur': apply_blur,
     'salt_pepper': apply_salt_and_pepper,
-    'grayscale' : apply_grayscale
+    'saturation' : apply_saturation
 }
 
 def apply_effect(img, effect_id, params):
