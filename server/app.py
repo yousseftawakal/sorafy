@@ -57,6 +57,27 @@ def get_available_effects():
                 {'id': 'block_size', 'name': 'Block Size', 'type': 'slider', 'min': 0, 'max': 50, 'step': 1, 'default': 1}
             ]
         },
+         'edge_detection': {
+            'name': 'Edge Detection',
+            'description': 'Detects edges in the image',
+             'params': [
+                {'id': 'threshold', 'name': 'Edge Threshold', 'type': 'slider', 
+                'min': 0, 'max': 255, 'step': 1, 'default': 0}
+             ]
+        },
+          'neon_glow':{
+             'name': 'Neon Glow',
+             'description': 'Adds a glowing neon effect to edges',
+             'params':[ 
+                 { 'id': 'intensity','name': 'Glow Intensity', 'type': 'slider', 'min': 1, 'max': 20, 'step': 1, 'default': 5},
+                 { 'id': 'color', 'name': 'Glow Color', 'type': 'color', 'default': '#00FFFF'}
+             ]
+        },
+          'denoise':{
+            'name': 'Noise Removal',
+            'description': 'Reduces image noise',
+            'params':[{ 'id': 'strength','name': 'Denoising Strength', 'type': 'slider', 'min': 1,'max': 7,'step': 1, 'default': 3}]
+        }
     }
     
     available_effects = {k: v for k, v in effect_info.items() if k in EFFECTS}
