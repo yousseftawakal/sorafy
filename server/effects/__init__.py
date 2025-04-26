@@ -3,6 +3,7 @@ from .salt_pepper import apply_salt_and_pepper
 from .brightness import apply_brightness
 from .hue_rotation import apply_hue_rotation
 from .sharpen import apply_sharpen
+from .denoise import apply_denoise
 
 EFFECTS = {
     'blur': apply_blur,
@@ -10,6 +11,7 @@ EFFECTS = {
     'brightness': apply_brightness,
     'hue_rotation': apply_hue_rotation,
     'sharpen': apply_sharpen,
+    'denoise': apply_denoise
 }
 
 def apply_effect(img, effect_id, params):
