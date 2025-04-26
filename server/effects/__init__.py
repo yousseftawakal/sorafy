@@ -4,6 +4,7 @@ from .brightness import apply_brightness
 from .hue_rotation import apply_hue_rotation
 from .sharpen import apply_sharpen
 from .denoise import apply_denoise
+from .Edge_Detection import apply_edge_detection
 
 EFFECTS = {
     'blur': apply_blur,
@@ -11,7 +12,8 @@ EFFECTS = {
     'brightness': apply_brightness,
     'hue_rotation': apply_hue_rotation,
     'sharpen': apply_sharpen,
-    'denoise': apply_denoise
+    'denoise': apply_denoise,
+    'edge_detection': apply_edge_detection
 }
 
 def apply_effect(img, effect_id, params):
