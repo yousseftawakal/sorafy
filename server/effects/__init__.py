@@ -1,9 +1,11 @@
 from .blur import apply_blur
 from .salt_pepper import apply_salt_and_pepper
+from .Edge_Detection import apply_edge_detection
 
 EFFECTS = {
     'blur': apply_blur,
-    'salt_pepper': apply_salt_and_pepper
+    'salt_pepper': apply_salt_and_pepper,
+    'edge_detection': apply_edge_detection
 }
 
 def apply_effect(img, effect_id, params):
