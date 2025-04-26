@@ -1,9 +1,14 @@
 from waitress import serve
-print("Starting production server...")
 from app import app
+import os
 
 if __name__ == '__main__':
-    print("Server is running at http://127.0.0.1:5000")
-    serve(app, 
-          host='127.0.0.1', 
-          port=5000)
+    host = '0.0.0.0'
+    port = int(os.environ.get('PORT', 5000))
+    
+    if os.environ.get('FLASK_ENV') == 'development':
+        print(f"Running in development mode at http://{host}:{port}")
+        app.run(host=host, port=port, debug=True)
+    else:
+        print(f"Running in production mode at http://{host}:{port}")
+        serve(app, host=host, port=port)
