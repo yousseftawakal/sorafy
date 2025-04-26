@@ -1,9 +1,11 @@
 from .blur import apply_blur
 from .salt_pepper import apply_salt_and_pepper
+from .Neon_Glow import apply_neon_glow
 
 EFFECTS = {
     'blur': apply_blur,
-    'salt_pepper': apply_salt_and_pepper
+    'salt_pepper': apply_salt_and_pepper,
+    'neon_glow': apply_neon_glow
 }
 
 def apply_effect(img, effect_id, params):
