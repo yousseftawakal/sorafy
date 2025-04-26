@@ -1,9 +1,11 @@
 from .blur import apply_blur
 from .salt_pepper import apply_salt_and_pepper
+from .denoise import apply_denoise
 
 EFFECTS = {
     'blur': apply_blur,
-    'salt_pepper': apply_salt_and_pepper
+    'salt_pepper': apply_salt_and_pepper,
+    'denoise': apply_denoise
 }
 
 def apply_effect(img, effect_id, params):

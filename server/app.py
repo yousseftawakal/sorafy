@@ -76,7 +76,7 @@ def get_available_effects():
           'denoise':{
             'name': 'Noise Removal',
             'description': 'Reduces image noise',
-            'params':[{ 'id': 'strength','name': 'Denoising Strength', 'type': 'slider', 'min': 1,'max': 7,'step': 1, 'default': 3}]
+            'params':[{ 'id': 'size','name': 'Denoising Size', 'type': 'slider', 'min': 1,'max': 7,'step': 2, 'default': 3}]
         }
     }
     
