@@ -104,6 +104,13 @@ def get_available_effects():
             'params': [
                 {'id': 'intensity', 'name': 'Grayscale Intensity', 'type': 'slider', 'min': 0, 'max': 1, 'step': 0.1, 'default': 1.0}
             ]
+        },
+        'saturation': {
+            'name': 'Saturation',
+            'description': 'Apply saturation effect',
+            'params': [
+                {'id': 'level', 'name': 'Saturation Level', 'type': 'slider', 'min': 0, 'max': 2, 'step': 0.1, 'default': 1}
+            ]
         }
     }
     

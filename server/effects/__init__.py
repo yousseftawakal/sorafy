@@ -7,6 +7,7 @@ from .denoise import apply_denoise
 from .Edge_Detection import apply_edge_detection
 from .Neon_Glow import apply_neon_glow
 from .grayscale import apply_grayscale
+from .saturation import apply_saturation
 
 EFFECTS = {
     'blur': apply_blur,
@@ -17,7 +18,8 @@ EFFECTS = {
     'denoise': apply_denoise,
     'edge_detection': apply_edge_detection,
     'neon_glow': apply_neon_glow,
-    'grayscale' : apply_grayscale
+    'grayscale' : apply_grayscale,
+    'saturation' : apply_saturation
 }
 
 def apply_effect(img, effect_id, params):
