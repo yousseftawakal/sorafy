@@ -58,24 +58,26 @@ def get_available_effects():
             ]
         },
         'brightness': {
-        'name': 'Brightness',
-        'description': 'Adjust the brightness of the image',
-        'params': [
-            {'id': 'factor', 'name': 'Brightness Factor', 'type': 'slider', 'min': 0, 'max': 2, 'step': 0.1, 'default': 1.0}
-        ]
-    },
+            'name': 'Brightness',
+            'description': 'Adjust the brightness of the image',
+            'params': [
+                {'id': 'factor', 'name': 'Brightness Factor', 'type': 'slider', 'min': 0, 'max': 5, 'step': 0.1, 'default': 1.5}
+            ]
+        },
        'hue_rotation': {
-        'name': 'Hue Rotation',
-        'description': 'Rotate the hues of the image',
-        'params': [
-            {'id': 'angle', 'name': 'Angle', 'type': 'slider', 'min': -180, 'max': 180, 'step': 1, 'default': 0}
-        ]
-    },
-    'sharpen': {
-        'name': 'Sharpen',
-        'description': 'Apply sharpening effect to the image',
-        'params': []
-    },
+            'name': 'Hue Rotation',
+            'description': 'Rotate the hues of the image',
+            'params': [
+                {'id': 'angle', 'name': 'Angle', 'type': 'slider', 'min': -180, 'max': 180, 'step': 1, 'default': 45}
+            ]
+        },
+        'sharpen': {
+            'name': 'Sharpen',
+            'description': 'Apply sharpening effect to the image',
+            'params': [
+                {'id': 'strength', 'name': 'Strength', 'type': 'slider', 'min': 1, 'max': 20, 'step': 0.1, 'default': 1.5}
+            ]
+        },
     }
     
     available_effects = {k: v for k, v in effect_info.items() if k in EFFECTS}

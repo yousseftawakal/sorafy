@@ -1,4 +1,7 @@
-from PIL import ImageFilter
+from PIL import ImageFilter, ImageEnhance
 
 def apply_sharpen(img, params=None):
-    return img.filter(ImageFilter.SHARPEN)
+    strength = params.get('strength', 1.5)
+    
+    enhancer = ImageEnhance.Sharpness(img)
+    return enhancer.enhance(strength)

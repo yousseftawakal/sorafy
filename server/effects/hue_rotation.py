@@ -1,8 +1,9 @@
 import colorsys
 import numpy as np
+from PIL import Image
 
 def apply_hue_rotation(img, params=None):
-    angle = params.get('angle', 0)
+    angle = params.get('angle', 45)
     img = img.convert('RGB')
     np_img = np.array(img) / 255.0
     r, g, b = np_img[..., 0], np_img[..., 1], np_img[..., 2]

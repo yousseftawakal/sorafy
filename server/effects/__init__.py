@@ -1,9 +1,15 @@
 from .blur import apply_blur
 from .salt_pepper import apply_salt_and_pepper
+from .brightness import apply_brightness
+from .hue_rotation import apply_hue_rotation
+from .sharpen import apply_sharpen
 
 EFFECTS = {
     'blur': apply_blur,
-    'salt_pepper': apply_salt_and_pepper
+    'salt_pepper': apply_salt_and_pepper,
+    'brightness': apply_brightness,
+    'hue_rotation': apply_hue_rotation,
+    'sharpen': apply_sharpen,
 }
 
 def apply_effect(img, effect_id, params):
