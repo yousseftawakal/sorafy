@@ -85,12 +85,12 @@ def get_available_effects():
                 {'id': 'threshold', 'name': 'Edge Threshold', 'type': 'slider', 'min': 0, 'max': 255, 'step': 1, 'default': 0}
             ]
         },
-        'neon_glow':{
+        'neon_glow': {
             'name': 'Neon Glow',
             'description': 'Adds a glowing neon effect to edges',
-            'params':[ 
-                { 'id': 'intensity','name': 'Glow Intensity', 'type': 'slider', 'min': 1, 'max': 20, 'step': 1, 'default': 5},
-                { 'id': 'color', 'name': 'Glow Color', 'type': 'color', 'default': '#00FFFF'}
+            'params': [ 
+                {'id': 'intensity', 'name': 'Glow Intensity', 'type': 'slider', 'min': 3, 'max': 20, 'step': 1, 'default': 8},
+                {'id': 'color', 'name': 'Glow Color', 'type': 'color', 'default': '#00FFFF'}
             ]
         },
         'denoise':{

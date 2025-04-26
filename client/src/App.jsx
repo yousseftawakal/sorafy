@@ -45,7 +45,11 @@ function App() {
   }, []);
 
   const handleParamChange = (processorId, paramId, value) => {
-    const newValue = parseFloat(value);
+    const effect = availableEffects[processorId];
+    const param = effect.params.find((p) => p.id === paramId);
+
+    // If the parameter is a color, don't parse it as a float
+    const newValue = param.type === 'color' ? value : parseFloat(value);
 
     setPendingChanges((prev) => ({
       ...prev,
@@ -314,24 +318,42 @@ function App() {
                   hasPendingChanges={!!pendingChanges[id]}
                   onApply={() => applyProcessorChanges(id)}
                 >
-                  {effect.params.map((param) => (
-                    <Slider
-                      key={param.id}
-                      label={param.name}
-                      min={param.min}
-                      max={param.max}
-                      step={param.step}
-                      defaultValue={param.default}
-                      value={
-                        pendingChanges[id]?.[param.id] ??
-                        processorParams[id]?.[param.id] ??
-                        param.default
-                      }
-                      onChange={(value) =>
-                        handleParamChange(id, param.id, value)
-                      }
-                    />
-                  ))}
+                  {effect.params.map((param) => {
+                    if (param.type === 'color') {
+                      return (
+                        <ColorInput
+                          key={param.id}
+                          label={param.name}
+                          value={
+                            pendingChanges[id]?.[param.id] ??
+                            processorParams[id]?.[param.id] ??
+                            param.default
+                          }
+                          onChange={(value) =>
+                            handleParamChange(id, param.id, value)
+                          }
+                        />
+                      );
+                    }
+                    return (
+                      <Slider
+                        key={param.id}
+                        label={param.name}
+                        min={param.min}
+                        max={param.max}
+                        step={param.step}
+                        defaultValue={param.default}
+                        value={
+                          pendingChanges[id]?.[param.id] ??
+                          processorParams[id]?.[param.id] ??
+                          param.default
+                        }
+                        onChange={(value) =>
+                          handleParamChange(id, param.id, value)
+                        }
+                      />
+                    );
+                  })}
                 </Processor>
               ))}
           </div>
@@ -602,6 +624,26 @@ function Slider({ label, min, max, step, defaultValue, value, onChange }) {
         value={value}
         onChange={handleChange}
         className="slider__input"
+      />
+    </div>
+  );
+}
+
+function ColorInput({ label, value, onChange }) {
+  const handleChange = (e) => {
+    onChange?.(e.target.value);
+  };
+
+  return (
+    <div className="color-input">
+      <div className="color-input__header">
+        <span className="color-input__label">{label}</span>
+      </div>
+      <input
+        type="color"
+        value={value}
+        onChange={handleChange}
+        className="color-input__input"
       />
     </div>
   );
