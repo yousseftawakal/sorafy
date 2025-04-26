@@ -8,6 +8,7 @@ from .Edge_Detection import apply_edge_detection
 from .Neon_Glow import apply_neon_glow
 from .grayscale import apply_grayscale
 from .saturation import apply_saturation
+from .invert import apply_invert
 
 EFFECTS = {
     'blur': apply_blur,
@@ -19,7 +20,8 @@ EFFECTS = {
     'edge_detection': apply_edge_detection,
     'neon_glow': apply_neon_glow,
     'grayscale' : apply_grayscale,
-    'saturation' : apply_saturation
+    'saturation' : apply_saturation,
+    'invert': apply_invert
 }
 
 def apply_effect(img, effect_id, params):

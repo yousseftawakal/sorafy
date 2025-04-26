@@ -111,6 +111,13 @@ def get_available_effects():
             'params': [
                 {'id': 'level', 'name': 'Saturation Level', 'type': 'slider', 'min': 0, 'max': 2, 'step': 0.1, 'default': 1}
             ]
+        },
+        "invert": {
+            "name": "Invert",
+            "description": "Apply invert effect",
+            "params": [
+                { "id": "intensity", "name": "Invert Intensity", "type": "slider", "min": 0, "max": 2, "step": 0.1, "default": 1.0}
+            ]
         }
     }
     
