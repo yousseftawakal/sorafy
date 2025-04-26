@@ -6,6 +6,7 @@ from .sharpen import apply_sharpen
 from .denoise import apply_denoise
 from .Edge_Detection import apply_edge_detection
 from .Neon_Glow import apply_neon_glow
+from .grayscale import apply_grayscale
 
 EFFECTS = {
     'blur': apply_blur,
@@ -15,7 +16,8 @@ EFFECTS = {
     'sharpen': apply_sharpen,
     'denoise': apply_denoise,
     'edge_detection': apply_edge_detection,
-    'neon_glow': apply_neon_glow
+    'neon_glow': apply_neon_glow,
+    'grayscale' : apply_grayscale
 }
 
 def apply_effect(img, effect_id, params):

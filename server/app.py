@@ -97,6 +97,13 @@ def get_available_effects():
             'name': 'Noise Removal',
             'description': 'Reduces image noise',
             'params': [{ 'id': 'size','name': 'Denoising Size', 'type': 'slider', 'min': 1,'max': 7,'step': 2, 'default': 3}]
+        },
+        'grayscale': {
+            'name': 'Grayscale',
+            'description': 'Convert image to grayscale',
+            'params': [
+                {'id': 'intensity', 'name': 'Grayscale Intensity', 'type': 'slider', 'min': 0, 'max': 1, 'step': 0.1, 'default': 1.0}
+            ]
         }
     }
     
