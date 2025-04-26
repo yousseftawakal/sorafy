@@ -1,11 +1,13 @@
 from .blur import apply_blur
 from .salt_pepper import apply_salt_and_pepper
 from .saturation import apply_saturation
+from .invert import apply_invert
 
 EFFECTS = {
     'blur': apply_blur,
     'salt_pepper': apply_salt_and_pepper,
-    'saturation' : apply_saturation
+    'saturation': apply_saturation,
+    'invert': apply_invert
 }
 
 def apply_effect(img, effect_id, params):

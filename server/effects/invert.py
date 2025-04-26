@@ -1,11 +1,17 @@
-from PIL import Image
-import numpy as np
-
+from PIL import Image, ImageChops, ImageEnhance
 
 def apply_invert(img, params=None):
-    img_array = np.array(img)
+    if params is None:
+        params = {}
+        
+    intensity = params.get('intensity', 1.0)
     
-    inverted_array = 255 - img_array
-    inverted_img = Image.fromarray(inverted_array)
-    return inverted_img
+    inverted = ImageChops.invert(img)
+    
+    if intensity <= 1:
+        result = Image.blend(img, inverted, intensity)
+    else:
+        result = Image.blend(inverted, img, intensity - 1)
+    
+    return result
 

@@ -58,12 +58,12 @@ def get_available_effects():
             ]
         },
         "invert": {
+            "name": "Invert",
             "description": "Apply invert effect",
-           "name": "Invert",
-           "params": [ { "default": 1, "id": "level", "max": 2, "min": 0, "name": "Invert Level", "step": 0.1,  "type": "slider" }
-           ]
+            "params": [
+                { "id": "intensity", "name": "Invert Intensity", "type": "slider", "min": 0, "max": 2, "step": 0.1, "default": 1.0}
+            ]
         }
-
     }
     
     available_effects = {k: v for k, v in effect_info.items() if k in EFFECTS}
